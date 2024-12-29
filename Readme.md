@@ -1,4 +1,4 @@
-Here's the documentation in a simpler, more straightforward format:
+
 
 ---
 
