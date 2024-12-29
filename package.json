@@ -1,0 +1,17 @@
+{
+  "name": "cicd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "private": true,
+  "dependencies": {
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.9",
+    "simple-git": "^3.27.0",
+    "zod": "^3.24.1"
+  }
+}

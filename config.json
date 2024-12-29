@@ -1,0 +1,16 @@
+[
+  {
+    "repository": {
+      "remote_url": "https://github.com/gotesgan/imageopt-.git",
+      "local_path": "/home/shantanu/Pictures/test1",
+      "branch": "main"
+    },
+    "scripts": [
+      {
+        "name": "Setup Environment",
+        "command": "npm install",
+        "description": "Install dependencies after pulling the latest code."
+      }
+    ]
+  }
+]
