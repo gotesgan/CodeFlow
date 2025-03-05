@@ -11,8 +11,8 @@ export async function checkForCommits(localPath, branch) {
         await git.fetch('origin');
 
         // Compare remote and local branch hashes
-        const remoteHash = await git.revParse([`origin/${branch}`]);
-        const localHash = await git.revParse([branch]);
+        const remoteHash = await git.revparse([`origin/${branch}`]);
+        const localHash = await git.revparse([branch]);
 
         if (remoteHash !== localHash) {
             logInfo(`New commits found for branch ${branch}`);
