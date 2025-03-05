@@ -24,8 +24,8 @@ async function main() {
             });
 
             await Promise.all(workers);
-            logInfo('Sleeping for 1 minute...');
-            await sleep(60000); // Sleep for 1 minute
+            logInfo('Sleeping for 30 seconds...');
+            await sleep(30000); // Sleep for 1 minute
         }
     } catch (e) {
         logError(`Main function error: ${e}`);
