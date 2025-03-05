@@ -1,7 +1,7 @@
 import { exec } from 'child_process';
 import { logInfo, logError } from '../utils/logger.js';
 
-export async function runScript(command, cwd) {
+export async function runScript(command, cwd, allowedExitCodes = [0]) {
     return new Promise((resolve, reject) => {
         logInfo(`Running script: ${command}`);
         const process = exec(command, { cwd });
@@ -10,7 +10,7 @@ export async function runScript(command, cwd) {
         process.stderr.on('data', (data) => logError(`[SCRIPT ERROR]: ${data}`));
 
         process.on('exit', (code) => {
-            if (code === 0) {
+            if (allowedExitCodes.includes(code)) {
                 logInfo(`Script executed successfully: ${command}`);
                 resolve();
             } else {

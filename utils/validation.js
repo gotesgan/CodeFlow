@@ -14,6 +14,7 @@ const validateConfig = z.array(
                 name: z.string().min(1),
                 command: z.string().min(1),
                 description: z.string().optional(),
+                allowedExitCodes: z.array(z.number()).optional(), // Allow custom exit codes
             })
         ),
     })

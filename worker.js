@@ -12,10 +12,11 @@ async function processRepository(config) {
         if (!fs.existsSync(local_path)) {
             await cloneRepository(remote_url, local_path, branch);
         }
+
         const newCommits = await checkForCommits(local_path, branch);
         if (newCommits) {
             for (const script of config.scripts) {
-                await runScript(script.command, local_path);
+                await runScript(script.command, local_path, script.allowedExitCodes);
             }
             logInfo(`CI/CD pipeline completed for ${remote_url}!`);
         }
